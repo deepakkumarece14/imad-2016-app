@@ -9,7 +9,7 @@ ul {display:block;}
 .menubar_right {list-style-type:none;margin:0;padding:0;background-color:#47476b;float:right;}
 .menu_left {float:left;}
 .menu_right {float:right;}
-li {display:list-item;text-align: -webkit-match-parent;}
+li {display:list-item;}
 li a {display:block;color:white;text-align:center;padding:16px;text-decoration:none;}
 li a:hover {background-color:#00cc33;}
 
