@@ -20,3 +20,21 @@ body {
     height: 200px;
 }
 
+/*Index Styling  */
+body {padding:0;margin:0;}
+div {display:block;}
+.menubar_div {overflow:auto;width:100%}
+ul {display:block;}
+.menubar_left {list-style-type:none;margin:0;padding:0;background-color:#47476b;}
+.menubar_right {list-style-type:none;margin:0;padding:0;background-color:#47476b;float:right;}
+.menu_left {float:left;}
+.menu_right {float:right;}
+li {display:list-item;text-align: -webkit-match-parent;}
+li a {display:block;color:white;text-align:center;padding:16px;text-decoration:none;}
+li a:hover {background-color:#00cc33;}
+
+.body_div {margin-left:25%;margin-right:25%;}
+h2 {color:#3366cc;}
+
+
+/* Home Page styling  */
