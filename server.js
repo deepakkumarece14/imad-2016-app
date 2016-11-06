@@ -33,12 +33,12 @@ app.get('/ui/madi.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/ui/background.jpg', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'background.jpg'));
+app.get('/ui/background.JPG', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'background.JPG'));
 });
 
-app.get('/ui/profile.jpg', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'profile.jpg'));
+app.get('/ui/profile.JPG', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'profile.JPG'));
 });
 
 app.get('/ui/menu-3.png', function (req, res) {
