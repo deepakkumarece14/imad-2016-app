@@ -13,7 +13,7 @@ function moveRight(){
 	}
 }
 
-madi.onclick = function() {
+img.onclick = function() {
 	var interval = setInterval(moveRight,30);
 };
 
