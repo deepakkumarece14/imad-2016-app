@@ -17,7 +17,6 @@ img.onclick = function() {
 	var interval = setInterval(moveRight,30);
 };
 
-
 //Slideshow of images
 var slideIndex = 1;
 showSlides(slideIndex);
