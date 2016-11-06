@@ -4,8 +4,9 @@ console.log('Loaded!');
 function madiMove() {
     var img = document.getElementById("madi");
     var marginLeft = 0;
+    var interval = setInterval(moveRight,30);
     function moveRight(){
-    	if(marginLeft == 1150){
+    	if(marginLeft == 500){
     		clearInterval(interval);
     	}
     	else{
@@ -13,10 +14,6 @@ function madiMove() {
     		img.style.marginLeft = marginLeft + "px";
         }
     }
-    
-    img.onclick = function() {
-    	var interval = setInterval(moveRight,30);
-    };
 }
 
 //Slideshow of images
