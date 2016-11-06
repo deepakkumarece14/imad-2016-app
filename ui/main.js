@@ -1,21 +1,23 @@
 console.log('Loaded!');
 
 //madi movement
-var img = document.getElementById("madi");
-var marginLeft = 0;
-function moveRight(){
-	/*if(marginLeft >= 1150){
-		clearInterval(interval);
-	}
-	else{*/
-		marginLeft += 1;
-		img.style.marginLeft = marginLeft + "px";
-
+function madiMove() {
+    var img = document.getElementById("madi");
+    var marginLeft = 0;
+    function moveRight(){
+    	if(marginLeft == 1150){
+    		clearInterval(interval);
+    	}
+    	else{
+    		marginLeft += 1;
+    		img.style.marginLeft = marginLeft + "px";
+        }
+    }
+    
+    img.onclick = function() {
+    	var interval = setInterval(moveRight,30);
+    };
 }
-
-img.onclick = function() {
-	var interval = setInterval(moveRight,30);
-};
 
 //Slideshow of images
 var slideIndex = 1;
