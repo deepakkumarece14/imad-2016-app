@@ -14,6 +14,7 @@ function madiMove() {
     		img.style.marginLeft = marginLeft + "px";
         }
     }
+    document.getElementById("madibtn").disabled = true;
 }
 
 //Slideshow of images
