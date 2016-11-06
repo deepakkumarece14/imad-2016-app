@@ -25,6 +25,10 @@ app.get('/ui/home_page.html', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'home_page.html'));
 });
 
+app.get('/ui/feedback.html', function(req, res){
+    res.sendFile(path.join(__dirname, 'ui', 'feedback.html'));
+});
+
 app.get('/ui/madi.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
