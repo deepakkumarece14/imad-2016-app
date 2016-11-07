@@ -5,9 +5,10 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articlehtml = {
-    title: 'Article HTML',
-    date: '11th Nov. 2016',
+var articleOne = {
+    title: 'Article HTML'
+    heading: 'Article HTML',
+    date: '24th Sep. 2016',
     content: ` 
 		<p>CSS stands for Cascading Style Sheet.</p>
 		<div class="info"><p><b>info</b> goes here</p></div>`
@@ -15,12 +16,14 @@ var articlehtml = {
 
 function createTemplate(data) {
     var title = data.title;
+    var heading = data.heading;
     var date = data.date;
     var content = data.content;
     var htmlTemplate = `
     <!DOCTYPE html>
     <html>
         <head>
+            <title>${title}</title>
             <link rel="icon" href="/ui/madi.png" />
             <link rel="stylesheet" href="/ui/style.css" />
         </head>
@@ -42,7 +45,7 @@ function createTemplate(data) {
     
     <div class="body_container">
     	<p></p>
-    	<h2>${title}</h2>
+    	<h2>${heading}</h2>
     	<div class="date">${date}</div>
     	<div class="content">
     		${content}
@@ -67,7 +70,7 @@ app.get('/ui/main.js', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/articlehtml', function (req, res) {
+app.get('/article-one', function (req, res) {
     res.send(createTemplate(articlehtml));
 });
 
