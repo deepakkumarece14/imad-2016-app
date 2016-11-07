@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articlehtml = {
     title: 'Article HTML',
     heading: 'Article HTML',
     date: '24th Sep. 2016',
@@ -70,8 +70,8 @@ app.get('/ui/main.js', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/article-one', function (req, res) {
-    res.send(createTemplate(articleOne));
+app.get('/article-html', function (req, res) {
+    res.send(createTemplate(articlehtml));
 });
 
 app.get('/ui/madi.png', function (req, res) {
