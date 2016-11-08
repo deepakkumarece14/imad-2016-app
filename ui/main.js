@@ -44,3 +44,27 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+//counter
+var counter = document.getElementById("counter");
+var counter_btn = document.getElementById("countClick");
+count_btn.onclick = function() {
+    var request = XMLHttpRequest();
+    
+    request.onreadystatechange = function() {
+        if(request.readyState == XMLHttpRequest.DONE) {
+            if(request.status == 200) {
+                var count = request.responseText;
+                
+                var counter = document.getElementById("counter");
+                counter.innerHTML = count.toString();
+            }
+        }
+    };
+    
+    //making the request
+    request.open('GET','https://cloud.imad.hasura.io/counter',true);
+    request.send(null);  
+};
+
+
