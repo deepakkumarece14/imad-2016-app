@@ -13,14 +13,14 @@ var articles = {
         content: ` 
     		<p>HTML stands for Cascading Style Sheet.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`},
-    articlecss: {
+    'article-css': {
         title: 'Article CSS',
         heading: 'Article CSS',
         date: '24th Sep. 2016',
         content: ` 
     		<p>CSS stands for Cascading Style Sheet.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`},
-    articlejs: {
+    'article-js': {
         title: 'Article JAVASCRIPT',
         heading: 'Article JAVASCRIPT',
         date: '24th Sep. 2016',
