@@ -5,13 +5,28 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articlehtml = {
-    title: 'Article HTML',
-    heading: 'Article HTML',
-    date: '24th Sep. 2016',
-    content: ` 
-		<p>CSS stands for Cascading Style Sheet.</p>
-		<div class="info"><p><b>info</b> goes here</p></div>`
+var articles = {
+    articlehtml: {
+        title: 'Article HTML',
+        heading: 'Article HTML',
+        date: '24th Sep. 2016',
+        content: ` 
+    		<p>HTML stands for Cascading Style Sheet.</p>
+    		<div class="info"><p><b>info</b> goes here</p></div>`},
+    articlecss: {
+        title: 'Article CSS',
+        heading: 'Article CSS',
+        date: '24th Sep. 2016',
+        content: ` 
+    		<p>CSS stands for Cascading Style Sheet.</p>
+    		<div class="info"><p><b>info</b> goes here</p></div>`},
+    articlejs: {
+        title: 'Article JAVASCRIPT',
+        heading: 'Article JAVASCRIPT',
+        date: '24th Sep. 2016',
+        content: ` 
+    		<p>CSS stands for Cascading Style Sheet.</p>
+    		<div class="info"><p><b>info</b> goes here</p></div>`}
 };
 
 function createTemplate(data) {
@@ -70,8 +85,9 @@ app.get('/ui/main.js', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/article-html', function (req, res) {
-    res.send(createTemplate(articlehtml));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
