@@ -2,9 +2,19 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var crypto = require('crypto');
-
+var pool = require('pg').pool;
 var app = express();
+var bodyParser = require('body-parser');
+
 app.use(morgan('combined'));
+
+var config = {
+    user: 'deepakkumarece14',
+    database: 'deepakkumarece14',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
 
 var articles = {
     'article-html': {
@@ -141,6 +151,18 @@ function hash(input,salt) {
 app.get('/hash/:input', function (req, res) {
 	var hashedString = hash (req.params.input,'this-is-a-salt');
     res.send(hashedString);
+});
+
+app.get('/create-user', function (req, res) {
+    var salt = crypto.getRandomBytes(128).toString('hex');
+    var hashedPassword = hash(password,salt);
+    pool.query('INSERT INTO users_db (username, password) VALUES ($1, $2)', [username, hashedPassword], funtion (err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send("You are successfully signed up!");
+        }
+    });
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
