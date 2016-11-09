@@ -5,7 +5,7 @@ var crypto = require('crypto');
 var pool = require('pg').pool;
 var app = express();
 var bodyParser = require('body-parser');
-
+app.use(bodyParser.json());
 app.use(morgan('combined'));
 
 var config = {
@@ -15,6 +15,8 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
+
+var pool = new pool(config);
 
 var articles = {
     'article-html': {
