@@ -158,7 +158,7 @@ app.get('/hash/:input', function (req, res) {
 app.get('/create-user', function (req, res) {
     var salt = crypto.getRandomBytes(128).toString('hex');
     var hashedPassword = hash(password,salt);
-    pool.query('INSERT INTO users_db (username, password) VALUES ($1, $2)', [username, hashedPassword], funtion (err,result){
+    pool.query('INSERT INTO users_db (username, password) VALUES ($1, $2)', [username, hashedPassword], function (err,result) {
         if(err){
             res.status(500).send(err.toString());
         }else{
