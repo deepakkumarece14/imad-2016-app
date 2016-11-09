@@ -19,7 +19,7 @@ var config = {
 var pool = new pool(config);
 
 var articles = {
-    'article-html': {
+    'article-one': {
         title: 'Article HTML',
         heading: 'Article HTML',
         date: '24th Sep. 2016',
