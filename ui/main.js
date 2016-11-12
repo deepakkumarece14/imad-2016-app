@@ -46,7 +46,6 @@ function showSlides(n) {
 }
 
 //counter
-var counter = document.getElementById("counter");
 var counter_btn = document.getElementById("counter-click");
 counter_btn.onclick = function() {
     var request =new XMLHttpRequest();
@@ -55,7 +54,6 @@ counter_btn.onclick = function() {
         if(request.readyState == XMLHttpRequest.DONE) {
             if(request.status == 200) {
                 var count = request.responseText;
-                
                 var counter = document.getElementById("counter");
                 counter.innerHTML = count.toString();
             }
@@ -63,9 +61,7 @@ counter_btn.onclick = function() {
     };
     
     //making the request
-    request.open('GET','https://cloud.imad.hasura.io/counter',true);
+    request.open('GET','http://deepakkumarece14.imad.hasura-app.io/counter',true);
     request.send(null);  
 };
-
-
 
