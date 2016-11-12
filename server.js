@@ -172,7 +172,7 @@ app.get('/create-user', function (req, res) {
 });
 
 app.get('/test-db', function (req, res) {
-	pool.query('SELECT * FROM users_db, function (err,result) {
+	pool.query('SELECT * FROM users_db', function (err,result) {
         if(err){
             res.status(500).send(err.toString());
         }else{
