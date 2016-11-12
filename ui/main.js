@@ -47,9 +47,9 @@ function showSlides(n) {
 
 //counter
 var counter = document.getElementById("counter");
-var counter_btn = document.getElementById("countClick");
+var counter_btn = document.getElementById("counter-click");
 counter_btn.onclick = function() {
-    var request = XMLHttpRequest();
+    var request =new XMLHttpRequest();
     
     request.onreadystatechange = function() {
         if(request.readyState == XMLHttpRequest.DONE) {
