@@ -92,7 +92,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ui/home', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'feedback.html'));
+    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 
