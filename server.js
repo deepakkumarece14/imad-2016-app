@@ -19,26 +19,26 @@ var config = {
 var pool = new Pool(config);
 
 var articles = {
-    'article-html': {
+    'article-one': {
         title: 'Article HTML',
         heading: 'Article HTML',
         date: '24th Sep. 2016',
         content: ` 
-    		<p>HTML stands for Cascading Style Sheet.</p>
+    		<p>HTML stands for HyperTextMarkupLanguage.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`},
-    'article-css': {
+    'article-two': {
         title: 'Article CSS',
         heading: 'Article CSS',
-        date: '24th Sep. 2016',
+        date: '26th Sep. 2016',
         content: ` 
     		<p>CSS stands for Cascading Style Sheet.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`},
-    'article-js': {
+    'article-three': {
         title: 'Article JAVASCRIPT',
         heading: 'Article JAVASCRIPT',
-        date: '24th Sep. 2016',
+        date: '28th Sep. 2016',
         content: ` 
-    		<p>CSS stands for Cascading Style Sheet.</p>
+    		<p>JA stands for Javascript.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`}
 };
 
