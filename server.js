@@ -101,6 +101,11 @@ app.get('/ui/home', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/ui/profile', function(req, res){
+    res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
+});
+
+
 app.get('/ui/style.css', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -118,10 +123,6 @@ var count = 0;
 app.get('/counter', function (req, res) {
     count = count + 1;
     res.send(count.toString());
-});
-
-app.get('/ui/profile', function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
 });
 
 app.get('/ui/feedback', function(req, res){
