@@ -45,6 +45,13 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+//toast
+function toast() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+}
+
 //counter
 var counter_btn = document.getElementById("counter-click");
 counter_btn.onclick = function() {
@@ -62,6 +69,33 @@ counter_btn.onclick = function() {
     
     //making the request
     request.open('GET','http://deepakkumarece14.imad.hasura-app.io/counter',true);
-    request.send(null);  
+    request.send(null);
+};
+
+//login
+var loginButton = document.getElementById("login-btn");
+loginButton.onclick = function() {
+    var request =new XMLHttpRequest();
+    
+    request.onreadystatechange = function() {
+        if(request.readyState == XMLHttpRequest.DONE) {
+            if(request.status == 200) {
+				alert("Logged in successfully!");				
+            }else if (request.status == 403){
+				alert("Username or Password is incorrect!!");	
+			}else if (request.status == 500) {
+				alert("Something went wrong on the server!")
+			}
+        }
+    };
+    
+    //making the request
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	
+	
+    request.open('POST','http://deepakkumarece14.imad.hasura-app.io/login',true);
+    request.setRequestHeader('Content-Type', 'application/json');
+	request.send(JSON.stringify({username: username, password}));
 };
 
