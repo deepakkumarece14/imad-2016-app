@@ -99,7 +99,7 @@ app.get('/', function (req, res) {
 
 
 
-app.get('/ui/profile', function(req, res){
+app.get('/profile', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
 });
 
@@ -123,7 +123,7 @@ app.get('/counter', function (req, res) {
     res.send(count.toString());
 });
 
-app.get('/ui/feedback', function(req, res){
+app.get('/feedback', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'feedback.html'));
 });
 
