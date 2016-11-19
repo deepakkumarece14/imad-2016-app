@@ -203,20 +203,22 @@ app.post('/login', function (req, res) {
     pool.query('SELECT * FROM users_db WHERE username=$1', [username], function (err,result) {
         if(err){
             res.status(500).send(err.toString());
-        }else if(result.rows.length == 0){
+        }else {
+            if(result.rows.length === 0){
 			res.status(500).send("Username or Password is incorrect!");
-        else {
-			var hashedPassword = result.rows[0].password;
-			var hashedPassword.split('$')[2];
-			var hashedCompared = hash(password,salt);
-			if(hashedCompared == hashedPassword) {
-				//session
-			req.session.auth = {userId: result.rows[0]}.id};
-				
-				res.send('You are successfully Loggedin! with' + username);
-			}else{
-				res.send(403).send("Username or Password is incorrect!")
-			}
+            }else {
+    			var hashedPassword = result.rows[0].password;
+    			var hashedPassword.split('$')[2];
+    			var hashedCompared = hash(password,salt);
+    			if(hashedCompared === hashedPassword) {
+    				//session
+    			    req.session.auth = {userId: result.rows[0].id};
+    				
+    				res.send('You are successfully Loggedin! with' + username);
+        			}else{
+        				res.send(403).send("Username or Password is incorrect!")
+        			}
+            }
 		}
     });
 });
