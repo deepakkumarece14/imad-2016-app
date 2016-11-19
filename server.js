@@ -26,21 +26,21 @@ var pool = new Pool(config);
 
 var articles = {
     'article-one': {
-        title: 'Article HTML',
+        titles: 'Article HTML',
         heading: 'Article HTML',
         date: '24th Sep. 2016',
         content: ` 
     		<p>HTML stands for HyperTextMarkupLanguage.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`},
     'article-two': {
-        title: 'Article CSS',
+        titles: 'Article CSS',
         heading: 'Article CSS',
         date: '26th Sep. 2016',
         content: ` 
     		<p>CSS stands for Cascading Style Sheet.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`},
     'article-three': {
-        title: 'Article JAVASCRIPT',
+        titles: 'Article JAVASCRIPT',
         heading: 'Article JAVASCRIPT',
         date: '28th Sep. 2016',
         content: ` 
@@ -49,7 +49,7 @@ var articles = {
 };
 
 function createTemplate(data) {
-    var title = data.title;
+    var titles = data.titles;
     var heading = data.heading;
     var date = data.date;
     var content = data.content;
@@ -57,7 +57,7 @@ function createTemplate(data) {
         <!DOCTYPE html>
         <html>
             <head>
-                <title>${title}</title>
+                <title>${titles}</title>
                 <link rel="icon" href="/ui/madi.png" />
                 <link rel="stylesheet" href="/ui/style.css" />
             </head>
