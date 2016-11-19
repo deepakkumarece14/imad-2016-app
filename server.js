@@ -194,7 +194,47 @@ app.get('/create-user', function (req, res) {
 });
 
 
+/*app.post('/login', function (req, res) {
+	var username = req.body.username;
+	var password = req.body.password;
+		
+    var salt = crypto.getRandomBytes(128).toString('hex');
+    var hashedPassword = hash(password,salt);
+    pool.query('SELECT * FROM users_db WHERE username=$1', [username], function (err,result) {
+        if(err){
+            res.status(500).send(err.toString());
+        }else {
+            if(result.rows.length === 0){
+			res.status(500).send("Username or Password is incorrect!");
+            }else {
+    			var hashedPassword = result.rows[0].password;
+    			var salt = hashedPassword.split('$')[2];
+    			var hashedCompared = hash(password,salt);
+    			if(hashedCompared === hashedPassword) {
+    				//session
+    			    req.session.auth = {userId: result.rows[0].id};
+    				
+    				res.send('You are successfully Loggedin! with' + username);
+        			}else{
+        				res.send(403).send("Username or Password is incorrect!")
+        			}
+            }
+		}
+    });
+});
 
+app.get('/check-login',function(req,res) {
+	if(req.session && req.session.auth && req.session.auth.userId) {
+		res.send('You are logged in!' + req.session.auth.userId.toString());
+	}else {
+		res.send('You are not logged in! Please login again!!');
+	}
+});
+
+app.get('/logout',function(req,res) {
+	delete req.session.auth;
+	res.send('You are logged out');
+});*/
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
