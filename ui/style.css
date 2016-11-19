@@ -231,7 +231,7 @@ h2 {color:#3366cc;}
 	background-position:3px 4px;}
 
 .login-container, .signup-container input[type=password] {
-	background-image: url('password-icon.png');
+	background-image: url('/ui/password-icon.png');
 	background-repeat:no-repeat;
 	background-position:3px 4px;}
 
@@ -249,7 +249,7 @@ h2 {color:#3366cc;}
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-	background-image: url('user.png');
+	background-image: url('/ui/user.png');
 	background-repeat:no-repeat;
 	background-position:3px 4px;}
 
