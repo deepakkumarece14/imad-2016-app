@@ -67,7 +67,7 @@ function createTemplate(data) {
         		<img src="/ui/madilogo.png" alt="madilogo"/>
         		<nav>
         			<ul class="menubar">
-        				<li class="menu-item"><a href="/ui/home">HOME</a></li>
+        				<li class="menu-item"><a href="/">HOME</a></li>
         				<li class="menu-item"><a href="/ui/profile">PROFILE</a></li>
         				<li class="menu-item"><a href="/ui/articles">ARTICLES</a></li>
         				<li class="menu-item"><a href="/ui/userlogin" target="_blank">LOGIN</a></li>
@@ -97,9 +97,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/home', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+
 
 app.get('/ui/profile', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
