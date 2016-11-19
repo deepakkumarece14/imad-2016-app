@@ -63,18 +63,24 @@ function createTemplate(data) {
             </head>
         <body>
         <header>
-    	    <div class="menubar-container">
+        	<div class="menubar-container">
         		<img src="/ui/madilogo.png" alt="madilogo"/>
         		<nav>
         			<ul class="menubar">
         				<li class="menu-item"><a href="/">HOME</a></li>
-        				<li class="menu-item"><a href="/ui/profile">PROFILE</a></li>
-        				<li class="menu-item"><a href="/ui/articles">ARTICLES</a></li>
-        				<li class="menu-item"><a href="/ui/userlogin" target="_blank">LOGIN</a></li>
-        				<li class="menu-item"><a href="/ui/feedback" target="_blank">FEEDBACK</a></li>
+        				<li class="menu-item"><a href="/profile">PROFILE</a></li>
+        				<li class="menu-item dropdown"><a href="#">ARTICLES</a>
+        					<ul class="dropdown-content">
+        						<li class="dropdown-item"><a href="/article-one">Article HTML</a></li>
+        						<li class="dropdown-item"><a href="/article-two">Article CSS</a></li>
+        						<li class="dropdown-item"><a href="/article-three">Article JS</a></li>
+        					</ul>
+        				</li>
+        				<li class="menu-item"><a href="/login" target="_blank">LOGIN</a></li>
+        				<li class="menu-item"><a href="/feedback" target="_blank">FEEDBACK</a></li>
         			</ul>
         		</nav>
-    	    </div>	<!--end of menubar_container-->
+        	</div>	<!--end of menubar_container-->
         </header>
         
         <div class="body_container">
