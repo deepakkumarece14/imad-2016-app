@@ -30,23 +30,25 @@
 </header>
 
 
-<div>
-	<form method="POST">
-		Name	<input type="text" name="Username" placeholder="Enter Username" /><br>
-		Email	<input type="text" name="email" placeholder="Enter Your Email" /><br>
-    	<div id="comment_box_div">
-    		<h3>Comments</h3>
-    		<textarea rows="10" cols="90" id="comment_box" placeholder="comment here for my webapp"></textarea><br>
-    		<input type="submit" name="submit" value="Submit" onclick=commentSubmit() />
-    		<button type="reset" name="reset" value="Reset">Reset</button>
-    		
-    	</div>
-	</form>
-</div><hr/>
+<div class="body-container">
+	<div class="comment-form">
+		<form method="POST">
+			<label><b>Username</b></label><p></p>
+			<input type="text" name="username" placeholder="Enter Username" required/><p></p>
+				<h3>Comments</h3>
+				<textarea rows="10" cols="90" id="comment-feedback" placeholder="comment here for my webapp"></textarea><br>
+				<button type="submit" name="commentsubmit" id="command-button" value="Submit" class="button">Submit</button>
+				<button type="reset" name="reset" value="Reset" class="button">Reset</button>
+				
+		</form>
+	</div><hr/>
 
 <img id="madi" src="/ui/madi.png" title="Click Me" /><br>
-<p><button id="madibtn" onclick="madiMove()">Move madi</button></p><hr/>
+<p><button id="madibtn" class="button" onclick="madiMove()">Move madi</button></p><hr/>
+<div id="allFeedbacks">
+</div>
 
+</div> <!--body-container ends here -->
 <footer class="feedback-footer"><center>Thank You IMAD for this amazing Experience...</center></footer>
 
 <script type="text/javascript" src="/ui/main.js"></script>
