@@ -81,7 +81,7 @@ aside {
 	display:block;
 	width:150px;
 	float:left;
-	margin-top:0px;
+	margin-top:0;
 }
 
 .side-nav {
@@ -126,9 +126,7 @@ aside {
   transform: translateY(2px);
 } */
 
-.index-signup-div {
-	align:center
-}
+
 
 	
 h2 {color:#3366cc;}
