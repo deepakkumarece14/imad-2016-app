@@ -81,7 +81,7 @@ aside {
 	display:block;
 	width:150px;
 	float:left;
-	margin-top:10px;
+	margin-top:0px;
 }
 
 .side-nav {
@@ -104,11 +104,10 @@ aside {
 }
 
 .button {
-    background-color: #4CAF50;
+    background-color:lightgrey; /* #4CAF50 */
     border: none;
-	border-radius: 15px;
-	box-shadow: 0 9px #999;
-    color: white;
+	border-radius: 10px;
+    color: black;
     padding: 8px 12px;
     text-align: center;
     text-decoration: none;
@@ -119,12 +118,18 @@ aside {
 
 .button:hover {
 	background-color:#3e8e41;
+	color:white;
 }
-.button:active {
+/* .button:active {
   background-color: #3e8e41;
   box-shadow: 0 3px #666;
   transform: translateY(2px);
+} */
+
+.index-signup-div {
+	align:center
 }
+
 	
 h2 {color:#3366cc;}
 
@@ -218,7 +223,7 @@ h2 {color:#3366cc;}
 	padding:6px 12px;
 }
 
-.login-container input[type=text], input[type=password] {
+.login-container input {
     width:80%;
     padding: 8px 32px;
     margin: 6px 0;
@@ -226,7 +231,10 @@ h2 {color:#3366cc;}
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-	background-image: url('user.png');
+}
+
+.login-container, .signup-container input[type=text] {
+	background-image: url('/ui/user.png');
 	background-repeat:no-repeat;
 	background-position:3px 4px;}
 
@@ -249,7 +257,7 @@ h2 {color:#3366cc;}
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-	background-image: url('/ui/user.png');
+	background-image: url('user.png');
 	background-repeat:no-repeat;
 	background-position:3px 4px;}
 
@@ -303,3 +311,18 @@ h2 {color:#3366cc;}
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
+.comment-form {
+	margin-top:10px;
+	padding:6px 12px;
+}
+
+.comment-form input {
+    width:40%;
+    padding: 8px 32px;
+    margin: 6px 0;
+	font-size:16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
