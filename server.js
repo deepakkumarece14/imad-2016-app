@@ -168,6 +168,14 @@ app.get('/ui/users.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'users.png'));
 });
 
+app.get('/ui/user.png', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'user.png'));
+});
+
+app.get('/ui/password-icon.png', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'password-icon.png'));
+});
+
 app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
