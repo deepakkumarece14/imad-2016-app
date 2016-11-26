@@ -24,7 +24,7 @@ var config = {
 
 var pool = new Pool(config);
 
-var articles = {
+/* var articles = {
     'article-one': {
         title: 'Article HTML',
         heading: 'Article HTML',
@@ -46,7 +46,7 @@ var articles = {
         content: ` 
     		<p>JA stands for Javascript.</p>
     		<div class="info"><p><b>info</b> goes here</p></div>`}
-};
+}; */
 
 function createTemplate(data) {
     var title = data.title;
@@ -140,6 +140,10 @@ app.get('/ui/madilogo.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'madilogo.png'));
 });
 
+app.get('/ui/index.jpg', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'index.jpg'));
+});
+
 app.get('/ui/back.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'back.png'));
 });
@@ -222,7 +226,6 @@ app.post('/login', function (req, res) {
     			if(hashedCompared === hashedPassword) {
     				//session
     			    req.session.auth = {userId: result.rows[0].id};
-    				
     				res.send('You are successfully Loggedin! with' + username);
         			}else{
         				res.send(403).send("Username or Password is incorrect!");
@@ -242,7 +245,8 @@ app.get('/check-login',function(req,res) {
 
 app.get('/logout',function(req,res) {
 	delete req.session.auth;
-	res.send('You are logged out');
+	//res.send('You are logged out');
+	res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 
